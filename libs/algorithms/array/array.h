@@ -1,0 +1,4 @@
+#ifndef MYMAIN_ARRAY_H
+#define MYMAIN_ARRAY_H
+
+#endif //MYMAIN_ARRAY_H

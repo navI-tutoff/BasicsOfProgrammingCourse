@@ -1,0 +1,6 @@
+add_library(data_structures
+        bitset/bitset.c
+        bitset/bitset.h
+        unordered_array_set/unordered_array_set.c
+        unordered_array_set/unordered_array_set.h
+        )
