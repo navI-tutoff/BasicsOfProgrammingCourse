@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/vector/vector.h
+stdio.h
+-
+
 C:/Users/danyt/CLionProjects/myMain/main.c
 stdio.h
 -
+stdint.h
+-
+libs/data_structures/vector/vector.h
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/vector/vector.h
 

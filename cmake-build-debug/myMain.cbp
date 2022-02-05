@@ -170,6 +170,12 @@
 		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/unordered_array_set/unordered_array_set.h">
 			<Option target="data_structures"/>
 		</Unit>
+		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/vector/vector.c">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/vector/vector.h">
+			<Option target="data_structures"/>
+		</Unit>
 		<Unit filename="C:/Users/danyt/CLionProjects/myMain/main.c">
 			<Option target="myMain"/>
 		</Unit>
