@@ -17,4 +17,6 @@ windows.h
 C:/Users/danyt/CLionProjects/myMain/libs/data_structures/vector/vector.h
 stdio.h
 -
+stdbool.h
+-
 

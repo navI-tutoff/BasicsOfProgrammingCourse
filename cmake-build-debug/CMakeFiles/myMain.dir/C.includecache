@@ -9,11 +9,15 @@
 C:/Users/danyt/CLionProjects/myMain/libs/data_structures/vector/vector.h
 stdio.h
 -
+stdbool.h
+-
 
 C:/Users/danyt/CLionProjects/myMain/main.c
 stdio.h
 -
 stdint.h
+-
+assert.h
 -
 libs/data_structures/vector/vector.h
 C:/Users/danyt/CLionProjects/myMain/libs/data_structures/vector/vector.h
