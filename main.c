@@ -9,6 +9,8 @@ void test_pushBack_emptyVector() {
     pushBack(&v, 28);
 
     assert(getVectorValue(&v, 0) == 28);
+
+    deleteVector(&v);
 }
 
 void test_pushBack_fullVector() {
@@ -19,6 +21,8 @@ void test_pushBack_fullVector() {
     pushBack(&v, 4);
 
     assert(getVectorValue(&v, 3) == 4);
+
+    deleteVector(&v);
 }
 
 void test_popBack_notEmptyVector() {
@@ -30,6 +34,8 @@ void test_popBack_notEmptyVector() {
 
     assert(v.size == 0);
     assert(v.capacity == 1);
+
+    deleteVector(&v);
 }
 
 void test_atVector_notEmptyVector() {
@@ -44,6 +50,8 @@ void test_atVector_notEmptyVector() {
     assert(*atVector(&v, 0) == 1);
     assert(*atVector(&v, 2) == 3);
     assert(*atVector(&v, 4) == 5);
+
+    deleteVector(&v);
 }
 
 void test_atVector_requestToLastElement_test1() {
@@ -54,6 +62,8 @@ void test_atVector_requestToLastElement_test1() {
 
     assert(*atVector(&v, 2) == 28); // что-то я не понял, чем этот тест
     assert(*atVector(&v, 0) == 4);  // отличается от предыдущего
+
+    deleteVector(&v);
 }
 
 void test_atVector_requestToLastElement_test2() {
@@ -61,6 +71,8 @@ void test_atVector_requestToLastElement_test2() {
     pushBack(&v, 14);
 
     assert(*atVector(&v, 0) == 14);
+
+    deleteVector(&v);
 }
 
 void test_atVector_requestToLastElement() {
@@ -73,6 +85,8 @@ void test_back_oneElementInVector() {
     pushBack(&v, 4);
 
     assert(*back(&v) == 4);
+
+    deleteVector(&v);
 }
 
 void test_back_severalElementsInVector() {
@@ -83,6 +97,8 @@ void test_back_severalElementsInVector() {
     pushBack(&v, 8);
 
     assert(*back(&v) == 8);
+
+    deleteVector(&v);
 }
 
 void test_front_oneElementInVector() {
@@ -90,6 +106,8 @@ void test_front_oneElementInVector() {
     pushBack(&v, 4);
 
     assert(*front(&v) == 4);
+
+    deleteVector(&v);
 }
 
 void test_front_severalElementsInVector() {
@@ -99,9 +117,10 @@ void test_front_severalElementsInVector() {
     pushBack(&v, 4);
 
     assert(*front(&v) == 1);
+
+    deleteVector(&v);
 }
 
-// все тесты (потом бы не забыть удалить ком)
 void test_vector_struct() {
     test_pushBack_emptyVector();
     test_pushBack_fullVector();

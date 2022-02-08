@@ -18,19 +18,18 @@ vector createVector(size_t n) {
 
 void reverse(vector *v, size_t newCapacity) {
     v->capacity = newCapacity;
-
     if (newCapacity == 0) {
-        v->data = NULL;
         v->size = 0;
-    } else if (newCapacity < v->size) {
-        v->size = newCapacity;
+        v->data = NULL;
+        return;
     }
 
-    v->data = realloc(v->data, sizeof(int) * newCapacity);
-
+    v->data = realloc(v->data, newCapacity);
     if (v->data == NULL) {
         fprintf(stderr, "Bad alloc\n");
         exit(1);
+    } else if (newCapacity < v->size) {
+        v->size = newCapacity;
     }
 }
 
@@ -62,10 +61,8 @@ int getVectorValue(vector *v, size_t i) {
 }
 
 void pushBack(vector *v, int x) {
-    if (v->capacity == 0) {
-        v->capacity++;
-    } else if (isFull(v)) {
-        v->capacity *= 2;
+    if (isFull(v)) {
+        reverse(v, v->capacity ? v->capacity * 2 : 1);
     }
     v->data[v->size] = x;
     v->size++;
@@ -79,7 +76,7 @@ void popBack(vector *v) {
     v->size--;
 }
 
-int* atVector(vector *v, size_t index) {
+int *atVector(vector *v, size_t index) {
     if (v->size <= index) {
         fprintf(stderr, "IndexError: a[%zu] is not exist", index);
         exit(1);
@@ -87,10 +84,10 @@ int* atVector(vector *v, size_t index) {
     return v->data + index;
 }
 
-int* back(vector *v) {
+int *back(vector *v) {
     return v->data + v->size - 1;
 }
 
-int* front(vector *v) {
+int *front(vector *v) {
     return v->data;
 }
