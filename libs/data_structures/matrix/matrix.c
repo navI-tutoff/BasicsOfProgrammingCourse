@@ -1,6 +1,4 @@
 #include "matrix.h"
-#include <malloc.h>
-#include <stdio.h>
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int *) * nRows);
@@ -79,8 +77,8 @@ void swapColumns(matrix m, int j1, int j2) {
     }
 }
 
-void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int*, int)) {
-    int *critArray = (int*) malloc(sizeof(int) * m.nRows);
+void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int *, int)) {
+    int *critArray = (int *) malloc(sizeof(int) * m.nRows);
     for (int i = 0; i < m.nRows; i++) {
         critArray[i] = criteria(m.values[i], m.nCols);
     }
@@ -95,9 +93,9 @@ void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int*, int)) 
     free(critArray);
 }
 
-void insertionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int*, int)) {
-    int *critArray = (int*) malloc(sizeof(int) * m.nCols);
-    int *addArray = (int*) malloc(sizeof(int) * m.nRows);
+void insertionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int *, int)) {
+    int *critArray = (int *) malloc(sizeof(int) * m.nCols);
+    int *addArray = (int *) malloc(sizeof(int) * m.nRows);
 
     for (int i = 0; i < m.nCols; i++) {
         for (int j = 0; j < m.nRows; j++) {
@@ -115,4 +113,56 @@ void insertionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int*, int)) 
 
     free(critArray);
     free(addArray);
+}
+
+bool isSquareMatrix(matrix m) {
+    return m.nRows == m.nCols;
+}
+
+bool areTwoMatricesEqual(matrix m1, matrix m2) {
+    if (m1.nRows == m2.nRows && m1.nCols == m2.nCols) {
+        bool isEqual = true;
+        for (int i = 0; i < m1.nRows; i++) {
+            for (int j = 0; j < m1.nCols; j++) {
+                isEqual = (m1.values[i][j] == m2.values[i][j]);
+                if (!isEqual) {
+                    return false;
+                }
+            }
+        }
+    } else {
+        return false;
+    }
+
+    return true; // а я то думал, почему у меня выводит "2"
+}
+
+bool isEMatrix(matrix m) {
+    bool isEMatrix = false;
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = 0; j < m.nCols; j++) {
+            if (m.values[i][j] == 1) {
+                isEMatrix = j == i;
+                if (!isEMatrix) {
+                    return false;
+                }
+            }
+        }
+    }
+
+    return isEMatrix;
+}
+
+bool isSymmetricMatrix(matrix m) {
+    bool isSymmetric = true;
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = 0; j < m.nCols; j++) {
+            isSymmetric = m.values[i][j] == m.values[j][i];
+            if (!isSymmetric) {
+                return false;
+            }
+        }
+    }
+
+    return isSymmetric;
 }

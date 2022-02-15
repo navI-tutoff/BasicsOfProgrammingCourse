@@ -3,10 +3,8 @@
 
 
 int main() {
-    matrix m = getMemMatrix(2, 2);
+    matrix m = getMemMatrix(4, 4);
     inputMatrix(m);
 
-    swapColumns(m, 0, 1);
-
-    outputMatrix(m);
+    printf("%d\n", isSymmetricMatrix(m));
 }
