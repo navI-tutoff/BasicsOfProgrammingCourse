@@ -1,5 +1,6 @@
 #include "matrix.h"
 #include <malloc.h>
+#include <stdio.h>
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int *) * nRows);
@@ -27,5 +28,35 @@ void freeMemMatrix(matrix m) {
 void freeMemMatrices(matrix *ms, int nMatrices) {
     for (int i = 0; i < nMatrices; i++) {
         freeMemMatrix(ms[i]);
+    }
+}
+
+void inputMatrix(matrix m) {
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = 0; j < m.nCols; j++) {
+            scanf("%d", &m.values[i][j]);
+        }
+    }
+}
+
+void inputMatrices(matrix *ms, int nMatrices) {
+    for (int i = 0; i < nMatrices; i++) {
+        inputMatrix(ms[i]);
+    }
+}
+
+void outputMatrix(matrix m) {
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = 0; j < m.nCols; j++) {
+            printf("%d ", m.values[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void outputMatrices(matrix *ms, int nMatrices) {
+    for (int i = 0; i < nMatrices; i++) {
+        outputMatrix(ms[i]);
+        printf("\n");
     }
 }

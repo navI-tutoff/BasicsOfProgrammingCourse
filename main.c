@@ -1,6 +1,8 @@
 #include "libs\data_structures\matrix\matrix.h"
-#include <stdio.h>
 
 int main() {
-    printf("%llu", sizeof(matrix));
+    matrix *ms = getMemArrayOfMatrices(2, 2, 2);
+
+    inputMatrices(ms, 2);
+    outputMatrices(ms, 2);
 }
