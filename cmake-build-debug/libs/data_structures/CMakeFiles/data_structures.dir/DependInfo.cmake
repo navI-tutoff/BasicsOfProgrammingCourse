@@ -9,8 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/danyt/CLionProjects/myMain/libs/data_structures/bitset/bitset.c" "C:/Users/danyt/CLionProjects/myMain/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.obj"
+  "C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrix.c" "C:/Users/danyt/CLionProjects/myMain/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.obj"
   "C:/Users/danyt/CLionProjects/myMain/libs/data_structures/unordered_array_set/unordered_array_set.c" "C:/Users/danyt/CLionProjects/myMain/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/unordered_array_set/unordered_array_set.c.obj"
   "C:/Users/danyt/CLionProjects/myMain/libs/data_structures/vector/vector.c" "C:/Users/danyt/CLionProjects/myMain/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.obj"
+  "C:/Users/danyt/CLionProjects/myMain/libs/data_structures/vector/vectorTests.c" "C:/Users/danyt/CLionProjects/myMain/cmake-build-debug/libs/data_structures/CMakeFiles/data_structures.dir/vector/vectorTests.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

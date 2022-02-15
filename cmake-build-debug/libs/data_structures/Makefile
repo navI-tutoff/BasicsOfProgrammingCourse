@@ -153,6 +153,30 @@ bitset/bitset.c.s:
 	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.s
 .PHONY : bitset/bitset.c.s
 
+matrix/matrix.obj: matrix/matrix.c.obj
+.PHONY : matrix/matrix.obj
+
+# target to build an object file
+matrix/matrix.c.obj:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.obj
+.PHONY : matrix/matrix.c.obj
+
+matrix/matrix.i: matrix/matrix.c.i
+.PHONY : matrix/matrix.i
+
+# target to preprocess a source file
+matrix/matrix.c.i:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.i
+.PHONY : matrix/matrix.c.i
+
+matrix/matrix.s: matrix/matrix.c.s
+.PHONY : matrix/matrix.s
+
+# target to generate assembly for a file
+matrix/matrix.c.s:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.s
+.PHONY : matrix/matrix.c.s
+
 unordered_array_set/unordered_array_set.obj: unordered_array_set/unordered_array_set.c.obj
 .PHONY : unordered_array_set/unordered_array_set.obj
 
@@ -201,6 +225,30 @@ vector/vector.c.s:
 	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.s
 .PHONY : vector/vector.c.s
 
+vector/vectorTests.obj: vector/vectorTests.c.obj
+.PHONY : vector/vectorTests.obj
+
+# target to build an object file
+vector/vectorTests.c.obj:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/vector/vectorTests.c.obj
+.PHONY : vector/vectorTests.c.obj
+
+vector/vectorTests.i: vector/vectorTests.c.i
+.PHONY : vector/vectorTests.i
+
+# target to preprocess a source file
+vector/vectorTests.c.i:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/vector/vectorTests.c.i
+.PHONY : vector/vectorTests.c.i
+
+vector/vectorTests.s: vector/vectorTests.c.s
+.PHONY : vector/vectorTests.s
+
+# target to generate assembly for a file
+vector/vectorTests.c.s:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/vector/vectorTests.c.s
+.PHONY : vector/vectorTests.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -213,12 +261,18 @@ help:
 	@echo ... bitset/bitset.obj
 	@echo ... bitset/bitset.i
 	@echo ... bitset/bitset.s
+	@echo ... matrix/matrix.obj
+	@echo ... matrix/matrix.i
+	@echo ... matrix/matrix.s
 	@echo ... unordered_array_set/unordered_array_set.obj
 	@echo ... unordered_array_set/unordered_array_set.i
 	@echo ... unordered_array_set/unordered_array_set.s
 	@echo ... vector/vector.obj
 	@echo ... vector/vector.i
 	@echo ... vector/vector.s
+	@echo ... vector/vectorTests.obj
+	@echo ... vector/vectorTests.i
+	@echo ... vector/vectorTests.s
 .PHONY : help
 
 
