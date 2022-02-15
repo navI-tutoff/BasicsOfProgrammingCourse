@@ -60,3 +60,21 @@ void outputMatrices(matrix *ms, int nMatrices) {
         printf("\n");
     }
 }
+
+void swapRows(matrix m, int i1, int i2) {
+    int *t = m.values[i1];
+    m.values[i1] = m.values[i2];
+    m.values[i2] = t;
+}
+
+void swap(int *a, int *b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+void swapColumns(matrix m, int j1, int j2) {
+    for (int i = 0; i < m.nRows; i++) {
+        swap(&m.values[i][j1], &m.values[i][j2]);
+    }
+}
