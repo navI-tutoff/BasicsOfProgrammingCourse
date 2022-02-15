@@ -78,3 +78,41 @@ void swapColumns(matrix m, int j1, int j2) {
         swap(&m.values[i][j1], &m.values[i][j2]);
     }
 }
+
+void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int*, int)) {
+    int *critArray = (int*) malloc(sizeof(int) * m.nRows);
+    for (int i = 0; i < m.nRows; i++) {
+        critArray[i] = criteria(m.values[i], m.nCols);
+    }
+
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = i; i > 0 && critArray[j - 1] > critArray[j]; j--) {
+            swap(&critArray[j - 1], &critArray[j]);
+            swapRows(m, j - 1, j);
+        }
+    }
+
+    free(critArray);
+}
+
+void insertionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int*, int)) {
+    int *critArray = (int*) malloc(sizeof(int) * m.nCols);
+    int *addArray = (int*) malloc(sizeof(int) * m.nRows);
+
+    for (int i = 0; i < m.nCols; i++) {
+        for (int j = 0; j < m.nRows; j++) {
+            addArray[j] = m.values[j][i];
+        }
+        critArray[i] = criteria(addArray, m.nRows);
+    }
+
+    for (int i = 0; i < m.nCols; i++) {
+        for (int j = i; j > 0 && critArray[j - 1] > critArray[j]; j--) {
+            swap(&critArray[j - 1], &critArray[j]);
+            swapColumns(m, j - 1, j);
+        }
+    }
+
+    free(critArray);
+    free(addArray);
+}
