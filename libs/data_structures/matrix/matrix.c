@@ -166,3 +166,49 @@ bool isSymmetricMatrix(matrix m) {
 
     return isSymmetric;
 }
+
+void transposeSquareMatrix(matrix m) {
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = i + 1; j < m.nCols; j++) {
+            swap(&m.values[i][j], &m.values[j][i]);
+        }
+    }
+}
+
+position getMinValuePos(matrix m) {
+    position minValuePos;
+    minValuePos.colIndex = 0;
+    minValuePos.rowIndex = 0;
+
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = 0; j < m.nCols; j++) {
+            position curPos;
+            curPos.rowIndex = i;
+            curPos.colIndex = j;
+            if (m.values[curPos.rowIndex][curPos.colIndex] < m.values[minValuePos.rowIndex][minValuePos.colIndex]) {
+                minValuePos = curPos;
+            }
+        }
+    }
+
+    return minValuePos;
+}
+
+position getMaxValuePos(matrix m) {
+    position maxValuePos;
+    maxValuePos.colIndex = 0;
+    maxValuePos.rowIndex = 0;
+
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = 0; j < m.nCols; j++) {
+            position curPos;
+            curPos.rowIndex = i;
+            curPos.colIndex = j;
+            if (m.values[curPos.rowIndex][curPos.colIndex] > m.values[maxValuePos.rowIndex][maxValuePos.colIndex]) {
+                maxValuePos = curPos;
+            }
+        }
+    }
+
+    return maxValuePos;
+}

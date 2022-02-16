@@ -3,8 +3,12 @@
 
 
 int main() {
-    matrix m = getMemMatrix(4, 4);
+    matrix m = getMemMatrix(2, 2);
     inputMatrix(m);
 
-    printf("%d\n", isSymmetricMatrix(m));
+    position max = getMaxValuePos(m);
+    position min = getMinValuePos(m);
+
+    printf("MAX: %d %d\n", max.rowIndex, max.colIndex);
+    printf("MIN: %d %d", min.rowIndex, min.colIndex);
 }

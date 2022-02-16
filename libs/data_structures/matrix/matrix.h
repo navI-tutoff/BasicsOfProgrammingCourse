@@ -68,5 +68,13 @@ bool isEMatrix(matrix m);
 // возвращает значение "истина", если матрица m является симметричной, "ложь" - в противном случае
 bool isSymmetricMatrix(matrix m);
 
+// транспонирует квадратную матрицу m
+void transposeSquareMatrix(matrix m);
+
+// возвращает позицию минимального элементра матрицы m
+position getMinValuePos(matrix m);
+
+// возвращает позицию максимального элемента матрицы m
+position getMaxValuePos(matrix m);
 
 #endif //MYMAIN_MATRIX_H
