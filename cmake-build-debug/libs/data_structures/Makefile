@@ -177,6 +177,30 @@ matrix/matrix.c.s:
 	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.s
 .PHONY : matrix/matrix.c.s
 
+matrix/matrixTests.obj: matrix/matrixTests.c.obj
+.PHONY : matrix/matrixTests.obj
+
+# target to build an object file
+matrix/matrixTests.c.obj:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTests.c.obj
+.PHONY : matrix/matrixTests.c.obj
+
+matrix/matrixTests.i: matrix/matrixTests.c.i
+.PHONY : matrix/matrixTests.i
+
+# target to preprocess a source file
+matrix/matrixTests.c.i:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTests.c.i
+.PHONY : matrix/matrixTests.c.i
+
+matrix/matrixTests.s: matrix/matrixTests.c.s
+.PHONY : matrix/matrixTests.s
+
+# target to generate assembly for a file
+matrix/matrixTests.c.s:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTests.c.s
+.PHONY : matrix/matrixTests.c.s
+
 unordered_array_set/unordered_array_set.obj: unordered_array_set/unordered_array_set.c.obj
 .PHONY : unordered_array_set/unordered_array_set.obj
 
@@ -264,6 +288,9 @@ help:
 	@echo ... matrix/matrix.obj
 	@echo ... matrix/matrix.i
 	@echo ... matrix/matrix.s
+	@echo ... matrix/matrixTests.obj
+	@echo ... matrix/matrixTests.i
+	@echo ... matrix/matrixTests.s
 	@echo ... unordered_array_set/unordered_array_set.obj
 	@echo ... unordered_array_set/unordered_array_set.i
 	@echo ... unordered_array_set/unordered_array_set.s

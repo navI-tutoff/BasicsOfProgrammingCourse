@@ -77,4 +77,15 @@ position getMinValuePos(matrix m);
 // возвращает позицию максимального элемента матрицы m
 position getMaxValuePos(matrix m);
 
+/*                    ЧАСТЬ ДЛЯ ТЕСТИРОВАНИЯ
+*/
+
+// возвращает матрицу размера nRows на nCols, построенную из элементов массива a,
+// размещённого в динамической памяти
+matrix createMatrixFromArray(const int *a, size_t nRows, size_t nCols);
+
+// возвращает указатель на нулевую матрицу массива из nMatrices матриц,
+// размещённых в динамической памяти, построенных из элементов массива a
+matrix *createArrayOfMatrixFromArray(const int *values, size_t nMatrices, size_t nRows, size_t nCols);
+
 #endif //MYMAIN_MATRIX_H

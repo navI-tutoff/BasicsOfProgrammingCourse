@@ -6,15 +6,17 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrix.c
-matrix.h
-C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrix.h
-
 C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrix.h
 stdbool.h
 -
 malloc.h
 -
 stdio.h
+-
+
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrixTests.c
+matrix.h
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrix.h
+assert.h
 -
 
