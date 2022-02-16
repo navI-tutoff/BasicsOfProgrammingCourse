@@ -3,5 +3,4 @@
 
 CMakeFiles/myMain.dir/main.c.obj: \
  ../libs/data_structures/matrix/matrix.h \
- ../libs/data_structures/matrix/matrixTests.c \
  ../main.c
