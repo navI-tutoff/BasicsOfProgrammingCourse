@@ -438,6 +438,55 @@ void test_task6() {
     test_task6_isntInverse();
 }
 
+///                                                                                Seventh Task
+
+int max2(int a, int b) {
+    return a > b ? a : b;
+}
+
+#include <limits.h>
+
+long long task7(matrix m) {
+    int arrSize = m.nRows + m.nCols - 1;
+    int elemOfPseudoDiagonal[m.nRows + m.nCols - 1];
+
+    for (int i = 0; i < arrSize; i++) {
+        elemOfPseudoDiagonal[i] = INT_MIN;
+    }
+
+    elemOfPseudoDiagonal[m.nRows - 1] = 0; /// middle
+
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = 0; j < m.nCols; j++) {
+            if (i != j) {
+                int k = j - i + m.nRows - 1;
+                elemOfPseudoDiagonal[k] = max2(elemOfPseudoDiagonal[k], m.values[i][j]);
+            }
+        }
+    }
+
+    return getSum(elemOfPseudoDiagonal, arrSize);
+}
+
+void test_task7_1() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    3, 2, 5, 4,
+                    1, 3, 6, 3,
+                    3, 2, 1, 2,
+            },
+            3, 4
+    );
+
+    assert(task7(initialMatrix) == 20);
+
+    freeMemMatrix(initialMatrix);
+}
+
+void test_task7() {
+    test_task7_1();
+}
+
 void tasks_tests() {
     test_task1();
     test_task2();
@@ -445,6 +494,7 @@ void tasks_tests() {
     test_task4();
     test_task5();
     test_task6();
+    test_task7();
 }
 
 int main() {
