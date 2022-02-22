@@ -665,7 +665,7 @@ void test_task10_1() {
                     5, 4,
                     4, 3,
                     1, 6,
-                    8, 0
+                    8, 0,
             },
             6, 2);
 
@@ -676,6 +676,47 @@ void test_task10_1() {
 
 void test_task10() {
     test_task10_1();
+}
+
+///                                                                              Eleventh  Task
+
+int task11(matrix m) {
+    int specialAccount = 0;
+    for (int j = 0; j < m.nCols; j++) {
+        int specialEl = m.values[0][j];
+        int columnSum = 0;
+        for (int i = 1; i < m.nRows; i++) {
+            if (m.values[i][j] > specialEl) {
+                columnSum += specialEl;
+                specialEl = m.values[i][j];
+            } else {
+                columnSum  += m.values[i][j];
+            }
+        }
+        if (specialEl > columnSum) {
+            specialAccount += 1;
+        }
+    }
+
+    return specialAccount;
+}
+
+void test_task11_1() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 5, 4,
+                    2, 3, 6, 7,
+                    12, 2, 1, 2,
+            },
+            3, 4);
+
+    assert(task11(initialMatrix) == 2);
+
+    freeMemMatrix(initialMatrix);
+}
+
+void test_task11() {
+    test_task11_1();
 }
 
 void tasks_tests() {
@@ -689,6 +730,7 @@ void tasks_tests() {
     test_task8();
     test_task9();
     test_task10();
+    test_task11();
 }
 
 int main() {
