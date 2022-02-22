@@ -370,12 +370,81 @@ void test_task5() {
     test_task5_differentSum();
 }
 
+///                                                                                  Sixth Task
+
+bool task6(matrix m1, matrix m2) {
+    matrix multiplication = mulMatrices(m1, m2);
+    bool isInverse = isEMatrix(multiplication);
+
+    return isInverse;
+}
+
+void test_task6_isInverse() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    2, 5, 7,
+                    6, 3, 4,
+                    5, -2, -3,
+            },
+            3, 3
+    );
+
+    matrix expectedMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, -1, 1,
+                    -38, 41, -34,
+                    27, -29, 24,
+            },
+            3, 3
+    );
+
+    task6(initialMatrix, expectedMatrix);
+
+    assert(task6(initialMatrix, expectedMatrix));
+
+    freeMemMatrix(initialMatrix);
+    freeMemMatrix(expectedMatrix);
+}
+
+void test_task6_isntInverse() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    2, 5, 7,
+                    6, 3, 4,
+                    5, -2, -3,
+            },
+            3, 3
+    );
+
+    matrix expectedMatrix = createMatrixFromArray(
+            (int[]) {
+                    4,  1, 1,
+                    -38, 71, -34,
+                    27, -29, 14,
+            },
+            3, 3
+    );
+
+    task6(initialMatrix, expectedMatrix);
+
+    assert(!task6(initialMatrix, expectedMatrix));
+
+    freeMemMatrix(initialMatrix);
+    freeMemMatrix(expectedMatrix);
+}
+
+void test_task6() {
+    test_task6_isInverse();
+    test_task6_isntInverse();
+}
+
 void tasks_tests() {
     test_task1();
     test_task2();
     test_task3();
     test_task4();
     test_task5();
+    test_task6();
 }
 
 int main() {
