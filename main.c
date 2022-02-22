@@ -221,8 +221,6 @@ void test_task3() {
 
 ///                                                                                 Fourth Task
 
-
-
 void task4(matrix *m) {
     if (isSquareMatrix(*m)) {
         *m = mulMatrices(*m, *m);
@@ -284,11 +282,100 @@ void test_task4() {
     test_task4_aintSquareMatrix();
 }
 
+///                                                                                  Fifth Task
+
+bool isUnique(long long *a, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (a[i] == a[j]) {
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+long long getSum(int *a, int n) {
+    long long sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += a[i];
+    }
+
+    return sum;
+}
+
+void task5(matrix m) {
+    long long rowsSum[m.nRows];
+    for (int i = 0; i < m.nRows; i++) {
+        rowsSum[i] = getSum(m.values[i], m.nCols);
+    }
+
+    if (isUnique(rowsSum, m.nRows)) {
+        transposeSquareMatrix(m);
+    }
+}
+
+void test_task5_equalSum() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 2,
+                    3, 0,
+            },
+            2, 2
+    );
+
+    matrix expectedMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 2,
+                    3, 0,
+            },
+            2, 2
+    );
+
+    task5(initialMatrix);
+
+    assert(areTwoMatricesEqual(initialMatrix, expectedMatrix));
+
+    freeMemMatrix(initialMatrix);
+    freeMemMatrix(expectedMatrix);
+}
+
+void test_task5_differentSum() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 2,
+                    3, 1,
+            },
+            2, 2
+    );
+
+    matrix expectedMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 3,
+                    2, 1,
+            },
+            2, 2
+    );
+
+    task5(initialMatrix);
+
+    assert(areTwoMatricesEqual(initialMatrix, expectedMatrix));
+
+    freeMemMatrix(initialMatrix);
+    freeMemMatrix(expectedMatrix);
+}
+
+void test_task5() {
+    test_task5_equalSum();
+    test_task5_differentSum();
+}
+
 void tasks_tests() {
     test_task1();
     test_task2();
     test_task3();
     test_task4();
+    test_task5();
 }
 
 int main() {
