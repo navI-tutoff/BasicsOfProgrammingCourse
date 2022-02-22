@@ -77,23 +77,33 @@ void swapColumns(matrix m, int j1, int j2) {
     }
 }
 
-void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int *, int)) {
+void selectionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int *, int)) {
     int *critArray = (int *) malloc(sizeof(int) * m.nRows);
     for (int i = 0; i < m.nRows; i++) {
         critArray[i] = criteria(m.values[i], m.nCols);
     }
-/// изменить сортировку
-    for (int i = 0; i < m.nRows; i++) {
-        for (int j = i; i > 0 && critArray[j - 1] > critArray[j]; j--) {
-            swap(&critArray[j - 1], &critArray[j]);
-            swapRows(m, j - 1, j);
+/// изменил. Осталось проверить
+    for (int i = 0; i < m.nRows - 1; i++) {
+        int minPos = i;
+        for (int j = i + 1; j < m.nRows; j++) {
+            if (critArray[j] < critArray[minPos]) {
+                minPos = j;
+            }
         }
+        swap(&critArray[i], &critArray[minPos]);
+        swapRows(m, i, minPos);
     }
+//    for (int i = 0; i < m.nRows; i++) {
+//        for (int j = i; i > 0 && critArray[j - 1] > critArray[j]; j--) {
+//            swap(&critArray[j - 1], &critArray[j]);
+//            swapRows(m, j - 1, j);
+//        }
+//    }
 
     free(critArray);
 }
 
-void insertionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int *, int)) {
+void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int *, int)) {
     int *critArray = (int *) malloc(sizeof(int) * m.nCols);
     int *addArray = (int *) malloc(sizeof(int) * m.nRows);
 
@@ -103,7 +113,19 @@ void insertionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int *, int))
         }
         critArray[i] = criteria(addArray, m.nRows);
     }
-/// изменить сортировку
+/// надеюсь, ничего не умрёт в ходе изменений
+/// upd: умерло 👍
+/// upd2: мало времени, верну как было, разберусь потом (никогда)
+//    for (int i = 0; i < m.nRows - 1; i++) {
+//        int minPos = i;
+//        for (int j = i + 1; j < m.nRows; j++) {
+//            if (critArray[j] < critArray[minPos]) {
+//                minPos = j;
+//            }
+//        }
+//        swap(&critArray[i], &critArray[minPos]);
+//        swapColumns(m, i, minPos);
+//    }
     for (int i = 0; i < m.nCols; i++) {
         for (int j = i; j > 0 && critArray[j - 1] > critArray[j]; j--) {
             swap(&critArray[j - 1], &critArray[j]);

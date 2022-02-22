@@ -92,7 +92,7 @@ int getArraySum(int *a, const int n) {
     return sumArray;
 }
 
-void test_insertionSortRowsMatrixByRowCriteria() {
+void test_selectionSortRowsMatrixByRowCriteria() {
     matrix initialMatrix = createMatrixFromArray(
             (int[]) {
                     3, 5, 4, 3, 6,
@@ -102,7 +102,7 @@ void test_insertionSortRowsMatrixByRowCriteria() {
             3, 5
     );
 
-    insertionSortRowsMatrixByRowCriteria(initialMatrix, getArraySum);
+    selectionSortRowsMatrixByRowCriteria(initialMatrix, getArraySum);
 
     matrix readyMatrix = createMatrixFromArray(
             (int[]) {
@@ -119,7 +119,7 @@ void test_insertionSortRowsMatrixByRowCriteria() {
     freeMemMatrix(readyMatrix);
 }
 
-void test_insertionSortColsMatrixByColCriteria() {
+void test_selectionSortColsMatrixByColCriteria() {
     matrix initialMatrix = createMatrixFromArray(
             (int[]) {
                     3, 6, 4, 3, 6,
@@ -129,7 +129,7 @@ void test_insertionSortColsMatrixByColCriteria() {
             3, 5
     );
 
-    insertionSortColsMatrixByColCriteria(initialMatrix, getArraySum);
+    selectionSortColsMatrixByColCriteria(initialMatrix, getArraySum);
 
     matrix readyMatrix = createMatrixFromArray(
             (int[]) {
@@ -260,8 +260,8 @@ void test_matrix_struct() {
     test_areTwoMatricesEqual_actuallyEqual();
     test_swapRows_swapTwoFirstsRows();
     test_swapColumns_swapTwoLatestColumns();
-    test_insertionSortRowsMatrixByRowCriteria();
-    test_insertionSortColsMatrixByColCriteria();
+    test_selectionSortRowsMatrixByRowCriteria();
+    test_selectionSortColsMatrixByColCriteria();
     test_isSquareMatrix_isActuallySquare();
     test_isEMatrix_actuallyEMatrix();
     test_isSymmetricMatrix_actuallyIsSymmetric();

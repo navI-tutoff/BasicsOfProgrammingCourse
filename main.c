@@ -1,4 +1,5 @@
 #include "libs\data_structures\matrix\matrix.h"
+//#include "libs\data_structures\matrix\matrixTests.c"
 #include <assert.h>
 
 ///                                                               First Task
@@ -80,7 +81,7 @@ int getMax(int *a, int n) {
 }
 
 void task2(matrix m) {
-    insertionSortRowsMatrixByRowCriteria(m, getMax);
+    selectionSortRowsMatrixByRowCriteria(m, getMax);
 }
 
 void test_task2_1() {
@@ -144,13 +145,84 @@ void test_task2() {
 
 ///                                                                                            Third Task
 
-//
+int getMin(int *a, int n) {
+    int min = a[0];
+    for (int i = 0; i < n; i++) {
+        if (min > a[i]) {
+            min = a[i];
+        }
+    }
 
+    return min;
+}
 
+void task3(matrix m) {
+    selectionSortColsMatrixByColCriteria(m, getMin);
+}
+
+void test_task3_1() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 2, 4, 3, 3,
+                    2, 5, 1, 8, 2, 7,
+                    6, 1, 4, 4, 8, 3,
+            },
+            3, 6
+    );
+
+    matrix expectedMatrix = createMatrixFromArray(
+            (int[]) {
+                    5, 2, 3, 3, 3, 4,
+                    5, 1, 2, 2, 7, 8,
+                    1, 4, 6, 8, 3, 4,
+            },
+            3, 6
+    );
+
+    task3(initialMatrix);
+
+    assert(areTwoMatricesEqual(initialMatrix, expectedMatrix));
+
+    freeMemMatrix(initialMatrix);
+    freeMemMatrix(expectedMatrix);
+}
+
+void test_task3_2() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3, 4,
+                    5, 6, 7, 8,
+                    9, 10, 11, 12,
+            },
+            3, 4
+    );
+
+    matrix expectedMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3, 4,
+                    5, 6, 7, 8,
+                    9, 10, 11, 12,
+            },
+            3, 4
+    );
+
+    task3(initialMatrix);
+
+    assert(areTwoMatricesEqual(initialMatrix, expectedMatrix));
+
+    freeMemMatrix(initialMatrix);
+    freeMemMatrix(expectedMatrix);
+}
+
+void test_task3() {
+    test_task3_1();
+    test_task3_2();
+}
 
 void tasks_tests() {
     test_task1();
     test_task2();
+    test_task3();
 }
 
 int main() {
