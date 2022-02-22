@@ -829,7 +829,7 @@ void test_task13_1() {
                     2, 3,
 
                     1, 3,
-                    7, 9
+                    7, 9,
             },
             4, 2, 2
     );
@@ -843,7 +843,79 @@ void test_task13() {
     test_task13_1();
 }
 
+///                                                                             Fourteenth Task
 
+int countValues(int *a, int n, int value) {
+    int res = 0;
+    for (int i = 0; i < n; i++) {
+        if (a[i] == value) {
+            res++;
+        }
+    }
+
+    return res;
+}
+
+int countZeroRows(matrix m) {
+    int zeroAccount = 0;
+    for (int i = 0; i < m.nRows; i++) {
+        if (countValues(m.values[i], m.nCols, 0) == m.nCols) {
+            zeroAccount++;
+        }
+    }
+
+    return zeroAccount;
+}
+
+void task14(matrix *ms, int nMatrix) {
+    int zeroAccount[nMatrix];
+    for (int i = 0; i < nMatrix; i++) {
+        zeroAccount[i] = countZeroRows(ms[i]);
+    }
+
+    int max = getMax(zeroAccount, nMatrix);
+    for (int i = 0; i < nMatrix; i++) {
+        if (zeroAccount[i] == max) {
+            outputMatrix(ms[i]);
+        }
+    }
+}
+
+void test_countZeroRows_1() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    0, 0, 0,
+                    1, 0, 0,
+                    0, 1, 0,
+            },
+            3, 3
+    );
+
+    assert(countZeroRows(m) == 1);
+
+    freeMemMatrix(m);
+}
+
+void test_countZeroRows_2() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    0, 0, 0,
+                    0, 0, 0,
+                    0, 1, 0,
+                    5, 0, 0,
+            },
+            4, 3
+    );
+
+    assert(countZeroRows(m) == 2);
+
+    freeMemMatrix(m);
+}
+
+void test_countZeroRows() {
+    test_countZeroRows_1();
+    test_countZeroRows_2();
+}
 
 void tasks_tests() {
     test_task1();
@@ -859,6 +931,7 @@ void tasks_tests() {
     test_task11();
     test_task12();
     test_task13();
+    test_countZeroRows();
 }
 
 int main() {

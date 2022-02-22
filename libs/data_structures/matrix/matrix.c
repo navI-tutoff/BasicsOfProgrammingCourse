@@ -277,7 +277,7 @@ matrix *createArrayOfMatrixFromArray(const int *values, size_t nMatrices, size_t
     for (int k = 0; k < nMatrices; k++) {
         for (int i = 0; i < nRows; i++) {
             for (int j = 0; j < nCols; j++) {
-                ms[k].values[i][j] - values[L++];
+                ms[k].values[i][j] = values[L++];
             }
         }
     }
