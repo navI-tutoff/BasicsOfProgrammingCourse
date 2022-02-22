@@ -785,6 +785,66 @@ void test_task12() {
     test_task12_1();
 }
 
+///                                                                             Thirteenth Task
+
+bool isNonDescendingSorted(int *a, int n) {
+    for (int i = 1; i < n; i++) {
+        if (a[i] < a[i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool hasAllNonDescendingRows(matrix m) {
+    for (int i = 0; i < m.nRows; i++) {
+        if (!isNonDescendingSorted(m.values[i], m.nCols)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int task13(matrix *ms, int nMatrix) {
+    int res = 0;
+    for (int i = 0; i < nMatrix; i++) {
+        if (hasAllNonDescendingRows(ms[i])) {
+            res++;
+        }
+    }
+
+    return res;
+}
+
+void test_task13_1() {
+    matrix *ms = createArrayOfMatrixFromArray(
+            (int[]) {
+                    7, 1,
+                    1, 1,
+
+                    1, 6,
+                    2, 2,
+
+                    5, 4,
+                    2, 3,
+
+                    1, 3,
+                    7, 9
+            },
+            4, 2, 2
+    );
+
+    assert(task13(ms, 4) == 2);
+
+    freeMemMatrices(ms, 4);
+}
+
+void test_task13() {
+    test_task13_1();
+}
+
+
+
 void tasks_tests() {
     test_task1();
     test_task2();
@@ -798,6 +858,7 @@ void tasks_tests() {
     test_task10();
     test_task11();
     test_task12();
+    test_task13();
 }
 
 int main() {
