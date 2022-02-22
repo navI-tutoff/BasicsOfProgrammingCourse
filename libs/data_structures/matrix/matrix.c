@@ -82,7 +82,7 @@ void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int *, int))
     for (int i = 0; i < m.nRows; i++) {
         critArray[i] = criteria(m.values[i], m.nCols);
     }
-
+/// изменить сортировку
     for (int i = 0; i < m.nRows; i++) {
         for (int j = i; i > 0 && critArray[j - 1] > critArray[j]; j--) {
             swap(&critArray[j - 1], &critArray[j]);
@@ -103,7 +103,7 @@ void insertionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int *, int))
         }
         critArray[i] = criteria(addArray, m.nRows);
     }
-
+/// изменить сортировку
     for (int i = 0; i < m.nCols; i++) {
         for (int j = i; j > 0 && critArray[j - 1] > critArray[j]; j--) {
             swap(&critArray[j - 1], &critArray[j]);
