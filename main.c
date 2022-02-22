@@ -487,6 +487,63 @@ void test_task7() {
     test_task7_1();
 }
 
+///                                                                                 Eighth Task
+
+int min2(int a, int b) {
+    return a < b ? a : b;
+}
+
+int task8(matrix m) {
+    position pos = getMaxValuePos(m);
+    int elem = m.values[pos.rowIndex][pos.colIndex];
+
+    int right = pos.colIndex;
+    int left = pos.colIndex;
+    for (int i = pos.rowIndex - 1; i >= 0; i--) {
+        left = left > 0 ? left - 1 : left;
+        right = right < m.nCols ? right + 1 : right;
+
+        elem = min2(getMin(&m.values[i][left], right - left), elem);
+    }
+
+    return elem;
+}
+
+void test_task8_1() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    10, 7, 5, 6,
+                    3, 11, 8, 9,
+                    4, 1, 12, 2,
+            },
+            3, 4
+    );
+
+    assert(task8(initialMatrix) == 5);
+
+    freeMemMatrix(initialMatrix);
+}
+
+void test_task8_2() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    6, 8, 9, 2,
+                    7, 12, 3, 4,
+                    10, 11, 5, 1,
+            },
+            3, 4
+    );
+
+    assert(task8(initialMatrix) == 6);
+
+    freeMemMatrix(initialMatrix);
+}
+
+void test_task8() {
+    test_task8_1();
+    test_task8_2();
+}
+
 void tasks_tests() {
     test_task1();
     test_task2();
@@ -495,6 +552,7 @@ void tasks_tests() {
     test_task5();
     test_task6();
     test_task7();
+    test_task8();
 }
 
 int main() {
