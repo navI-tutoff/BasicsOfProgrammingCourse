@@ -418,7 +418,7 @@ void test_task6_isntInverse() {
 
     matrix expectedMatrix = createMatrixFromArray(
             (int[]) {
-                    4,  1, 1,
+                    4, 1, 1,
                     -38, 71, -34,
                     27, -29, 14,
             },
@@ -547,6 +547,7 @@ void test_task8() {
 ///                                                                                  Ninth Task
 
 #include <math.h>
+#include <stdlib.h>
 
 float getDistance(int *a, int n) {
     float distance = 0;
@@ -618,6 +619,65 @@ void test_task9() {
     test_task9_1();
 }
 
+///                                                                                  Tenth Task
+
+int compare_long_long(const void *pa, const void *pb) {
+    long long arg1 = *(const int *) pa;
+    long long arg2 = *(const long long *) pb;
+
+    if (arg1 < arg2) {
+        return -1;
+    }
+    if (arg1 > arg2) {
+        return 1;
+    }
+
+    return 0;
+}
+
+int countNUnique(long long *a, int n) {
+    qsort(a, n, sizeof(long long), compare_long_long);
+
+    int uniqueAccount = 1;
+    for (int i = 1; i < n; i++) {
+        if (a[i] != a[i - 1]) {
+            uniqueAccount++;
+        }
+    }
+
+    return uniqueAccount;
+}
+
+int task10(matrix m) {
+    long long rowSum[m.nRows];
+    for (int i = 0; i < m.nRows; i++) {
+        rowSum[i] = getSum(m.values[i], m.nCols);
+    }
+
+    return countNUnique(rowSum, m.nRows);
+}
+
+void test_task10_1() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    7, 1,
+                    2, 7,
+                    5, 4,
+                    4, 3,
+                    1, 6,
+                    8, 0
+            },
+            6, 2);
+
+    assert(task10(initialMatrix) == 3);
+
+    freeMemMatrix(initialMatrix);
+}
+
+void test_task10() {
+    test_task10_1();
+}
+
 void tasks_tests() {
     test_task1();
     test_task2();
@@ -628,6 +688,7 @@ void tasks_tests() {
     test_task7();
     test_task8();
     test_task9();
+    test_task10();
 }
 
 int main() {
