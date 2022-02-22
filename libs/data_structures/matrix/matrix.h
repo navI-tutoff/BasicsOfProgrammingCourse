@@ -71,6 +71,9 @@ bool isSymmetricMatrix(matrix m);
 // транспонирует квадратную матрицу m
 void transposeSquareMatrix(matrix m);
 
+// перемножает матрицу m1 на матрицу m2
+matrix mulMatrices(matrix m1, matrix m2);
+
 // возвращает позицию минимального элементра матрицы m
 position getMinValuePos(matrix m);
 

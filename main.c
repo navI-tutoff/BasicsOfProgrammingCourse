@@ -2,7 +2,7 @@
 //#include "libs\data_structures\matrix\matrixTests.c"
 #include <assert.h>
 
-///                                                               First Task
+///                                                                                  First Task
 
 void task1(matrix m) {
     swapRows(m, getMinValuePos(m).rowIndex, getMaxValuePos(m).rowIndex);
@@ -67,7 +67,7 @@ void test_task1() {
     test_task1_minAndMaxInTheSameRows();
 }
 
-///                                                              Second Task
+///                                                                                 Second Task
 
 int getMax(int *a, int n) {
     int max = a[0];
@@ -143,7 +143,7 @@ void test_task2() {
     test_task2_2();
 }
 
-///                                                                                            Third Task
+///                                                                                  Third Task
 
 int getMin(int *a, int n) {
     int min = a[0];
@@ -219,10 +219,76 @@ void test_task3() {
     test_task3_2();
 }
 
+///                                                                                 Fourth Task
+
+
+
+void task4(matrix *m) {
+    if (isSquareMatrix(*m)) {
+        *m = mulMatrices(*m, *m);
+    }
+}
+
+void test_task4_isSquareMatrix() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 2,
+                    3, 4,
+            },
+            2, 2
+    );
+
+    matrix expectedMatrix = createMatrixFromArray(
+            (int[]) {
+                    7, 10,
+                    15, 22,
+            },
+            2, 2
+    );
+
+    task4(&initialMatrix);
+
+    assert(areTwoMatricesEqual(initialMatrix, expectedMatrix));
+
+    freeMemMatrix(initialMatrix);
+    freeMemMatrix(expectedMatrix);
+}
+
+void test_task4_aintSquareMatrix() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 5,
+                    3, 4, 6,
+            },
+            2, 3
+    );
+
+    matrix expectedMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 5,
+                    3, 4, 6,
+            },
+            2, 3
+    );
+
+    task4(&initialMatrix);
+
+    assert(areTwoMatricesEqual(initialMatrix, expectedMatrix));
+
+    freeMemMatrix(initialMatrix);
+    freeMemMatrix(expectedMatrix);
+}
+
+void test_task4() {
+    test_task4_isSquareMatrix();
+    test_task4_aintSquareMatrix();
+}
+
 void tasks_tests() {
     test_task1();
     test_task2();
     test_task3();
+    test_task4();
 }
 
 int main() {

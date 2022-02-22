@@ -1,4 +1,5 @@
 #include "matrix.h"
+#include <stdlib.h>
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int *) * nRows);
@@ -195,6 +196,27 @@ void transposeSquareMatrix(matrix m) {
             swap(&m.values[i][j], &m.values[j][i]);
         }
     }
+}
+
+matrix mulMatrices(matrix m1, matrix m2) {
+    // число столбцов m1 != числу строк m2 => error
+    if (m1.nCols != m2.nRows) {
+        fprintf(stderr, "Number of columns in the first matrix isnt equal to the number of rows in the second matrix");
+        exit(1);
+    }
+
+    matrix multiplication = getMemMatrix(m1.nRows, m2.nCols);
+
+    for (int i = 0; i < m1.nRows; i++) {
+        for (int j = 0; j < m2.nCols; j++) {
+            multiplication.values[i][j] = 0;
+            for (int k = 0; k < m2.nRows; k++) {
+                multiplication.values[i][j] += m1.values[i][k] * m2.values[k][j];
+            }
+        }
+    }
+
+    return multiplication;
 }
 
 position getMinValuePos(matrix m) {
