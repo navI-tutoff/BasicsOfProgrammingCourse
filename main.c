@@ -667,7 +667,8 @@ void test_task10_1() {
                     1, 6,
                     8, 0,
             },
-            6, 2);
+            6, 2
+    );
 
     assert(task10(initialMatrix) == 3);
 
@@ -690,7 +691,7 @@ int task11(matrix m) {
                 columnSum += specialEl;
                 specialEl = m.values[i][j];
             } else {
-                columnSum  += m.values[i][j];
+                columnSum += m.values[i][j];
             }
         }
         if (specialEl > columnSum) {
@@ -708,7 +709,8 @@ void test_task11_1() {
                     2, 3, 6, 7,
                     12, 2, 1, 2,
             },
-            3, 4);
+            3, 4
+    );
 
     assert(task11(initialMatrix) == 2);
 
@@ -717,6 +719,70 @@ void test_task11_1() {
 
 void test_task11() {
     test_task11_1();
+}
+
+///                                                                                Twelfth Task
+
+position getLeftMin(matrix m) {
+    int min = m.values[0][0];
+    position minPos = {0, 0};
+
+    for (int j = 0; j < m.nCols; j++) {
+        for (int i = 0; i < m.nRows; i++) {
+            if (m.values[i][j] < min) {
+                min = m.values[i][j];
+                minPos.colIndex = j;
+                minPos.rowIndex = i;
+            }
+        }
+    }
+
+    return minPos;
+}
+
+#include <memory.h>
+
+void task12(matrix m) {
+    position min = getLeftMin(m);
+
+    int column[m.nRows];
+    for (int i = 0; i < m.nRows; i++) {
+        column[i] = m.values[i][min.colIndex];
+    }
+
+    memcpy(m.values[m.nRows - 2], column, sizeof(int) * m.nCols);
+}
+
+void test_task12_1() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 1,
+            },
+            3, 3
+    );
+
+
+    task12(initialMatrix);
+
+    matrix expectedMatrix = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3,
+                    1, 4, 7,
+                    7, 8, 1,
+            },
+            3, 3
+    );
+
+    assert(areTwoMatricesEqual(initialMatrix, expectedMatrix));
+
+    freeMemMatrix(initialMatrix);
+    freeMemMatrix(expectedMatrix);
+}
+
+void test_task12() {
+    test_task12_1();
 }
 
 void tasks_tests() {
@@ -731,6 +797,7 @@ void tasks_tests() {
     test_task9();
     test_task10();
     test_task11();
+    test_task12();
 }
 
 int main() {
