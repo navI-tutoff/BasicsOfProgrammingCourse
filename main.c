@@ -544,6 +544,80 @@ void test_task8() {
     test_task8_2();
 }
 
+///                                                                                  Ninth Task
+
+#include <math.h>
+
+float getDistance(int *a, int n) {
+    float distance = 0;
+    for (int i = 0; i < n; i++) {
+        distance += (float) (a[i] * a[i]);
+    }
+
+    return sqrtf(distance);
+}
+
+void swapF(float *a, float *b) {
+    float t = *a;
+    *a = *b;
+    *b = t;
+}
+
+void selectionSortRowsMatrixByRowCriteriaF(matrix m, float (*criteria)(int *, int)) {
+    float *critArray = (float *) malloc(sizeof(float) * m.nRows);
+    for (int i = 0; i < m.nRows; i++) {
+        critArray[i] = criteria(m.values[i], m.nCols);
+    }
+
+    for (int i = 0; i < m.nRows - 1; i++) {
+        int minPos = i;
+        for (int j = i + 1; j < m.nRows; j++) {
+            if (critArray[j] < critArray[minPos]) {
+                minPos = j;
+            }
+        }
+        swapF(&critArray[i], &critArray[minPos]);
+        swapRows(m, i, minPos);
+    }
+
+    free(critArray);
+}
+
+void task9(matrix m) {
+    selectionSortRowsMatrixByRowCriteriaF(m, getDistance);
+}
+
+void test_task9_1() {
+    matrix initialMatrix = createMatrixFromArray(
+            (int[]) {
+                    2, 4, 3, // 5.3
+                    6, 3, 4, // 7.8
+                    5, 2, 3, // 6,1
+            },
+            3, 3
+    );
+
+    matrix expectedMatrix = createMatrixFromArray(
+            (int[]) {
+                    2, 4, 3,
+                    5, 2, 3,
+                    6, 3, 4,
+            },
+            3, 3
+    );
+
+    task9(initialMatrix);
+
+    assert(areTwoMatricesEqual(initialMatrix, expectedMatrix));
+
+    freeMemMatrix(initialMatrix);
+    freeMemMatrix(expectedMatrix);
+}
+
+void test_task9() {
+    test_task9_1();
+}
+
 void tasks_tests() {
     test_task1();
     test_task2();
@@ -553,6 +627,7 @@ void tasks_tests() {
     test_task6();
     test_task7();
     test_task8();
+    test_task9();
 }
 
 int main() {
