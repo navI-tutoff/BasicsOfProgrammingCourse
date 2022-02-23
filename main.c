@@ -917,6 +917,54 @@ void test_countZeroRows() {
     test_countZeroRows_2();
 }
 
+///                                                                              Fifteenth Task
+
+int getNormOfMatrix(matrix m) {
+    int norm = abs(m.values[0][0]);
+
+    for (int i = 0; i < m.nRows; i++) {
+        for (int j = 0; j < m.nCols; j++) {
+            if (abs(m.values[i][j]) > norm) { // Ну да, кто у нас в три ночи скобку не там закроет,
+                norm = abs(m.values[i][j]);   // а потом будет ещё 15 минут думать, А ЧЁ НЕ РАБОТАЕТ
+            }
+        }
+    }
+    return norm;
+}
+
+void task15(matrix *ms, int nMatrix) {
+    int norms[nMatrix];
+    for (int i = 0; i < nMatrix; i++) {
+        norms[i] = getNormOfMatrix(ms[i]);
+    }
+
+    int min = getMin(norms, nMatrix);
+    for (int i = 0; i < nMatrix; i++) {
+        if (norms[i] == min) {
+            outputMatrix(ms[i]);
+        }
+    }
+}
+
+void test_task15_1() {
+    matrix m = createMatrixFromArray(
+            (int[]) {
+                    5, -7, 17,
+                    -78, -92, 18,
+                    2, 6, 14,
+            },
+            3, 3
+    );
+
+    assert(getNormOfMatrix(m) == 92);
+
+    freeMemMatrix(m);
+}
+
+void test_task15() {
+    test_task15_1();
+}
+
 void tasks_tests() {
     test_task1();
     test_task2();
@@ -932,6 +980,7 @@ void tasks_tests() {
     test_task12();
     test_task13();
     test_countZeroRows();
+    test_task15();
 }
 
 int main() {
