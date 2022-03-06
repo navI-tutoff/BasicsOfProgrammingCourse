@@ -177,6 +177,30 @@ matrix/matrix.c.s:
 	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.s
 .PHONY : matrix/matrix.c.s
 
+matrix/matrixExercises.obj: matrix/matrixExercises.c.obj
+.PHONY : matrix/matrixExercises.obj
+
+# target to build an object file
+matrix/matrixExercises.c.obj:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixExercises.c.obj
+.PHONY : matrix/matrixExercises.c.obj
+
+matrix/matrixExercises.i: matrix/matrixExercises.c.i
+.PHONY : matrix/matrixExercises.i
+
+# target to preprocess a source file
+matrix/matrixExercises.c.i:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixExercises.c.i
+.PHONY : matrix/matrixExercises.c.i
+
+matrix/matrixExercises.s: matrix/matrixExercises.c.s
+.PHONY : matrix/matrixExercises.s
+
+# target to generate assembly for a file
+matrix/matrixExercises.c.s:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixExercises.c.s
+.PHONY : matrix/matrixExercises.c.s
+
 matrix/matrixTests.obj: matrix/matrixTests.c.obj
 .PHONY : matrix/matrixTests.obj
 
@@ -288,6 +312,9 @@ help:
 	@echo ... matrix/matrix.obj
 	@echo ... matrix/matrix.i
 	@echo ... matrix/matrix.s
+	@echo ... matrix/matrixExercises.obj
+	@echo ... matrix/matrixExercises.i
+	@echo ... matrix/matrixExercises.s
 	@echo ... matrix/matrixTests.obj
 	@echo ... matrix/matrixTests.i
 	@echo ... matrix/matrixTests.s

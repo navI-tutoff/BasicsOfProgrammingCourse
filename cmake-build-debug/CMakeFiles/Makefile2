@@ -131,12 +131,12 @@ CMakeFiles/myMain.dir/all: libs/algorithms/CMakeFiles/algorithms.dir/all
 CMakeFiles/myMain.dir/all: libs/data_structures/CMakeFiles/data_structures.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\myMain.dir\build.make CMakeFiles/myMain.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\myMain.dir\build.make CMakeFiles/myMain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\danyt\CLionProjects\myMain\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target myMain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\danyt\CLionProjects\myMain\cmake-build-debug\CMakeFiles --progress-num=12,13 "Built target myMain"
 .PHONY : CMakeFiles/myMain.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/myMain.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\danyt\CLionProjects\myMain\cmake-build-debug\CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\danyt\CLionProjects\myMain\cmake-build-debug\CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/myMain.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\danyt\CLionProjects\myMain\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/myMain.dir/rule
@@ -183,12 +183,12 @@ libs/algorithms/CMakeFiles/algorithms.dir/clean:
 libs/data_structures/CMakeFiles/data_structures.dir/all:
 	$(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/depend
 	$(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\danyt\CLionProjects\myMain\cmake-build-debug\CMakeFiles --progress-num=4,5,6,7,8,9,10 "Built target data_structures"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\danyt\CLionProjects\myMain\cmake-build-debug\CMakeFiles --progress-num=4,5,6,7,8,9,10,11 "Built target data_structures"
 .PHONY : libs/data_structures/CMakeFiles/data_structures.dir/all
 
 # Build rule for subdir invocation for target.
 libs/data_structures/CMakeFiles/data_structures.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\danyt\CLionProjects\myMain\cmake-build-debug\CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\danyt\CLionProjects\myMain\cmake-build-debug\CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 libs/data_structures/CMakeFiles/data_structures.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\danyt\CLionProjects\myMain\cmake-build-debug\CMakeFiles 0
 .PHONY : libs/data_structures/CMakeFiles/data_structures.dir/rule

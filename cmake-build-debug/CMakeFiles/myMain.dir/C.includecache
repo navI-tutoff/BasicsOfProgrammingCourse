@@ -14,9 +14,17 @@ malloc.h
 stdio.h
 -
 
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrixTests.c
+matrix.h
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrix.h
+assert.h
+-
+
 C:/Users/danyt/CLionProjects/myMain/main.c
 libs/data_structures/matrix/matrix.h
 C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrix.h
+libs/data_structures/matrix/matrixTests.c
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrixTests.c
 assert.h
 -
 limits.h

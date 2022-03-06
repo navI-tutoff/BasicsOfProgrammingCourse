@@ -8,4 +8,4 @@ add_library(data_structures
         vector/vectorTests.c
         matrix/matrix.c
         matrix/matrix.h
-        matrix/matrixTests.c)
+        matrix/matrixTests.c matrix/matrixExercises.c)
