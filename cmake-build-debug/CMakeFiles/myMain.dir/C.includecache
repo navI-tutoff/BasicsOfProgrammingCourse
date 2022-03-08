@@ -6,33 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrix.h
-stdbool.h
--
-malloc.h
--
-stdio.h
--
-
-C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrixTests.c
-matrix.h
-C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrix.h
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/stringTests.c
+string_.h
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.h
 assert.h
 -
+
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.h
 
 C:/Users/danyt/CLionProjects/myMain/main.c
-libs/data_structures/matrix/matrix.h
-C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrix.h
-libs/data_structures/matrix/matrixTests.c
-C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrixTests.c
-assert.h
--
-limits.h
--
-math.h
--
-stdlib.h
--
-memory.h
+libs/data_structures/string/string_.h
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.h
+libs/data_structures/string/stringTests.c
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/stringTests.c
+stdio.h
 -
 

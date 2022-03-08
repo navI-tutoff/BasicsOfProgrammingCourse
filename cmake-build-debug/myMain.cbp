@@ -176,6 +176,15 @@
 		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/matrix/matrixTests.c">
 			<Option target="data_structures"/>
 		</Unit>
+		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/stringTests.c">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.c">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.h">
+			<Option target="data_structures"/>
+		</Unit>
 		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/unordered_array_set/unordered_array_set.c">
 			<Option target="data_structures"/>
 		</Unit>

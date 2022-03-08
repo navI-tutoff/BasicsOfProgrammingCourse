@@ -7,9 +7,19 @@ libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.obj: \
 libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.obj: \
  ../libs/data_structures/matrix/matrix.c \
  ../libs/data_structures/matrix/matrix.h
+libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixExercises.c.obj: \
+ ../libs/data_structures/matrix/matrix.h \
+ ../libs/data_structures/matrix/matrixExercises.c \
+ ../libs/data_structures/matrix/matrixTests.c
 libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTests.c.obj: \
  ../libs/data_structures/matrix/matrix.h \
  ../libs/data_structures/matrix/matrixTests.c
+libs/data_structures/CMakeFiles/data_structures.dir/string/stringTests.c.obj: \
+ ../libs/data_structures/string/stringTests.c \
+ ../libs/data_structures/string/string_.h
+libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.obj: \
+ ../libs/data_structures/string/string_.c \
+ ../libs/data_structures/string/string_.h
 libs/data_structures/CMakeFiles/data_structures.dir/unordered_array_set/unordered_array_set.c.obj: \
  ../libs/algorithms/array/array.h \
  ../libs/data_structures/unordered_array_set/unordered_array_set.c \

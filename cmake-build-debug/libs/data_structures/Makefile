@@ -225,6 +225,54 @@ matrix/matrixTests.c.s:
 	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTests.c.s
 .PHONY : matrix/matrixTests.c.s
 
+string/stringTests.obj: string/stringTests.c.obj
+.PHONY : string/stringTests.obj
+
+# target to build an object file
+string/stringTests.c.obj:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/stringTests.c.obj
+.PHONY : string/stringTests.c.obj
+
+string/stringTests.i: string/stringTests.c.i
+.PHONY : string/stringTests.i
+
+# target to preprocess a source file
+string/stringTests.c.i:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/stringTests.c.i
+.PHONY : string/stringTests.c.i
+
+string/stringTests.s: string/stringTests.c.s
+.PHONY : string/stringTests.s
+
+# target to generate assembly for a file
+string/stringTests.c.s:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/stringTests.c.s
+.PHONY : string/stringTests.c.s
+
+string/string_.obj: string/string_.c.obj
+.PHONY : string/string_.obj
+
+# target to build an object file
+string/string_.c.obj:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.obj
+.PHONY : string/string_.c.obj
+
+string/string_.i: string/string_.c.i
+.PHONY : string/string_.i
+
+# target to preprocess a source file
+string/string_.c.i:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.i
+.PHONY : string/string_.c.i
+
+string/string_.s: string/string_.c.s
+.PHONY : string/string_.s
+
+# target to generate assembly for a file
+string/string_.c.s:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.s
+.PHONY : string/string_.c.s
+
 unordered_array_set/unordered_array_set.obj: unordered_array_set/unordered_array_set.c.obj
 .PHONY : unordered_array_set/unordered_array_set.obj
 
@@ -318,6 +366,12 @@ help:
 	@echo ... matrix/matrixTests.obj
 	@echo ... matrix/matrixTests.i
 	@echo ... matrix/matrixTests.s
+	@echo ... string/stringTests.obj
+	@echo ... string/stringTests.i
+	@echo ... string/stringTests.s
+	@echo ... string/string_.obj
+	@echo ... string/string_.i
+	@echo ... string/string_.s
 	@echo ... unordered_array_set/unordered_array_set.obj
 	@echo ... unordered_array_set/unordered_array_set.i
 	@echo ... unordered_array_set/unordered_array_set.s
