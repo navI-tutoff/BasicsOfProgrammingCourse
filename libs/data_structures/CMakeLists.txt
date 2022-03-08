@@ -16,4 +16,4 @@ add_library(data_structures
 
         string/string_.c
         string/string_.h
-        string/stringTests.c)
+        string/stringTests.c string/tasks/tasks.c string/tasks/tasks.h string/tasks/tasksTests.c)

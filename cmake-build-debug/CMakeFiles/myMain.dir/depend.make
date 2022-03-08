@@ -4,4 +4,6 @@
 CMakeFiles/myMain.dir/main.c.obj: \
  ../libs/data_structures/string/stringTests.c \
  ../libs/data_structures/string/string_.h \
+ ../libs/data_structures/string/tasks/tasks.h \
+ ../libs/data_structures/string/tasks/tasksTests.c \
  ../main.c

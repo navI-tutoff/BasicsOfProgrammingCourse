@@ -185,6 +185,15 @@
 		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.h">
 			<Option target="data_structures"/>
 		</Unit>
+		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/tasks/tasks.c">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/tasks/tasks.h">
+			<Option target="data_structures"/>
+		</Unit>
+		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/tasks/tasksTests.c">
+			<Option target="data_structures"/>
+		</Unit>
 		<Unit filename="C:/Users/danyt/CLionProjects/myMain/libs/data_structures/unordered_array_set/unordered_array_set.c">
 			<Option target="data_structures"/>
 		</Unit>

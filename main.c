@@ -1,7 +1,7 @@
-#include "libs\data_structures\string\string_.h"
 #include "libs\data_structures\string\stringTests.c"
-#include <stdio.h>
+#include "libs\data_structures\string\tasks\tasksTests.c"
 
 int main() {
     stringLibraryTests();
+    tasksTests();
 }

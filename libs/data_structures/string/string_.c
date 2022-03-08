@@ -1,6 +1,4 @@
 #include "string_.h"
-#include <ctype.h>
-#include <memory.h>
 
 size_t strlen_(const char *begin) {
     char *end = begin;
@@ -11,7 +9,7 @@ size_t strlen_(const char *begin) {
     return end - begin;
 }
 
-char* find(char *begin, char *end, int ch) {
+char *find(char *begin, char *end, int ch) {
     while (begin != end && *begin != ch) {
         begin++;
     }
@@ -19,7 +17,7 @@ char* find(char *begin, char *end, int ch) {
     return begin;
 }
 
-char* findNonSpace(char *begin) {
+char *findNonSpace(char *begin) {
     while (*begin != '\0' && isspace(*begin)) {
         begin++;
     }
@@ -35,7 +33,7 @@ char *findSpace(char *begin) {
     return begin;
 }
 
-char* findNonSpaceReverse(char *rbegin, const char *rend) {
+char *findNonSpaceReverse(char *rbegin, const char *rend) {
     while (rbegin != rend && isspace(*rbegin)) {
         rbegin--;
     }
@@ -43,7 +41,7 @@ char* findNonSpaceReverse(char *rbegin, const char *rend) {
     return rbegin;
 }
 
-char* findSpaceReverse(char *rbegin, const char *rend) {
+char *findSpaceReverse(char *rbegin, const char *rend) {
     while (rbegin != rend && !isspace(*rbegin)) {
         rbegin--;
     }
@@ -59,14 +57,14 @@ int strcmp_(const char *lhs, const char *rhs) {
     return *lhs - *rhs;
 }
 
-char* copy(const char *beginSourse, const char *endSourse, char *beginDestination) {
+char *copy(const char *beginSourse, const char *endSourse, char *beginDestination) {
     int capacity = endSourse - beginSourse;
     memcpy(beginDestination, beginSourse, capacity);
 
     return beginDestination + capacity;
 }
 
-char* copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int)) {
+char *copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int)) {
     while (beginSource != endSource) {
         if (f(*beginSource)) {
             *beginDestination++ = *beginSource;
@@ -77,7 +75,7 @@ char* copyIf(char *beginSource, const char *endSource, char *beginDestination, i
     return beginDestination;
 }
 
-char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDestination, int (*f)(int)) {
+char *copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDestination, int (*f)(int)) {
     while (rbeginSource != rendSource) {
         if (f(*rbeginSource)) {
             *beginDestination++ = *rbeginSource;

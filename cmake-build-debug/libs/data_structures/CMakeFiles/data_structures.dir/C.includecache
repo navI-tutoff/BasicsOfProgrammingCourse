@@ -6,15 +6,31 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/stringTests.c
-string_.h
 C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.h
-assert.h
+stdint.h
+-
+stdlib.h
+-
+stdio.h
+-
+stdbool.h
 -
 ctype.h
 -
+memory.h
+-
 
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/tasks/tasks.c
+tasks.h
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/tasks/tasks.h
+
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/tasks/tasks.h
+../string_.h
 C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.h
-stdint.h
+
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/tasks/tasksTests.c
+tasks.h
+C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/tasks/tasks.h
+assert.h
 -
 

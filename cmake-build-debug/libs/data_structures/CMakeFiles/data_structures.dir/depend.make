@@ -20,6 +20,14 @@ libs/data_structures/CMakeFiles/data_structures.dir/string/stringTests.c.obj: \
 libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.obj: \
  ../libs/data_structures/string/string_.c \
  ../libs/data_structures/string/string_.h
+libs/data_structures/CMakeFiles/data_structures.dir/string/tasks/tasks.c.obj: \
+ ../libs/data_structures/string/string_.h \
+ ../libs/data_structures/string/tasks/tasks.c \
+ ../libs/data_structures/string/tasks/tasks.h
+libs/data_structures/CMakeFiles/data_structures.dir/string/tasks/tasksTests.c.obj: \
+ ../libs/data_structures/string/string_.h \
+ ../libs/data_structures/string/tasks/tasks.h \
+ ../libs/data_structures/string/tasks/tasksTests.c
 libs/data_structures/CMakeFiles/data_structures.dir/unordered_array_set/unordered_array_set.c.obj: \
  ../libs/algorithms/array/array.h \
  ../libs/data_structures/unordered_array_set/unordered_array_set.c \

@@ -273,6 +273,54 @@ string/string_.c.s:
 	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/string_.c.s
 .PHONY : string/string_.c.s
 
+string/tasks/tasks.obj: string/tasks/tasks.c.obj
+.PHONY : string/tasks/tasks.obj
+
+# target to build an object file
+string/tasks/tasks.c.obj:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/tasks/tasks.c.obj
+.PHONY : string/tasks/tasks.c.obj
+
+string/tasks/tasks.i: string/tasks/tasks.c.i
+.PHONY : string/tasks/tasks.i
+
+# target to preprocess a source file
+string/tasks/tasks.c.i:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/tasks/tasks.c.i
+.PHONY : string/tasks/tasks.c.i
+
+string/tasks/tasks.s: string/tasks/tasks.c.s
+.PHONY : string/tasks/tasks.s
+
+# target to generate assembly for a file
+string/tasks/tasks.c.s:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/tasks/tasks.c.s
+.PHONY : string/tasks/tasks.c.s
+
+string/tasks/tasksTests.obj: string/tasks/tasksTests.c.obj
+.PHONY : string/tasks/tasksTests.obj
+
+# target to build an object file
+string/tasks/tasksTests.c.obj:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/tasks/tasksTests.c.obj
+.PHONY : string/tasks/tasksTests.c.obj
+
+string/tasks/tasksTests.i: string/tasks/tasksTests.c.i
+.PHONY : string/tasks/tasksTests.i
+
+# target to preprocess a source file
+string/tasks/tasksTests.c.i:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/tasks/tasksTests.c.i
+.PHONY : string/tasks/tasksTests.c.i
+
+string/tasks/tasksTests.s: string/tasks/tasksTests.c.s
+.PHONY : string/tasks/tasksTests.s
+
+# target to generate assembly for a file
+string/tasks/tasksTests.c.s:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/string/tasks/tasksTests.c.s
+.PHONY : string/tasks/tasksTests.c.s
+
 unordered_array_set/unordered_array_set.obj: unordered_array_set/unordered_array_set.c.obj
 .PHONY : unordered_array_set/unordered_array_set.obj
 
@@ -372,6 +420,12 @@ help:
 	@echo ... string/string_.obj
 	@echo ... string/string_.i
 	@echo ... string/string_.s
+	@echo ... string/tasks/tasks.obj
+	@echo ... string/tasks/tasks.i
+	@echo ... string/tasks/tasks.s
+	@echo ... string/tasks/tasksTests.obj
+	@echo ... string/tasks/tasksTests.i
+	@echo ... string/tasks/tasksTests.s
 	@echo ... unordered_array_set/unordered_array_set.obj
 	@echo ... unordered_array_set/unordered_array_set.i
 	@echo ... unordered_array_set/unordered_array_set.s
