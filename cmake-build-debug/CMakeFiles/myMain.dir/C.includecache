@@ -13,6 +13,8 @@ assert.h
 -
 
 C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.h
+stdint.h
+-
 
 C:/Users/danyt/CLionProjects/myMain/main.c
 libs/data_structures/string/string_.h
