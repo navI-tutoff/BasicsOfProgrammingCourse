@@ -1,5 +1,6 @@
 #include "string_.h"
 #include <assert.h>
+#include <ctype.h>
 
 void test_strlen__lengthIsZero() {
     char initialString[] = "";
@@ -126,11 +127,86 @@ void test_findSpaceReverse() {
     test_findSpaceReverse_aintSpace();
 }
 
-void stringStructureTests() {
+void test_strcmp_stringsEqual() {
+    char s[] = "Rake";
+    char s2[] = "Rake";
+
+    assert(strcmp_(s, s2) == 0);
+}
+
+void test_strcmp_differentStrings() {
+    char s[] = "Rake";
+    char s2[] = "Rakf";
+
+    assert(strcmp_(s, s2) == 'e' - 'f');
+}
+
+void test_strcmp_() {
+    test_strcmp_stringsEqual();
+    test_strcmp_differentStrings();
+}
+
+void test_copy_copyWholeString() {
+    char s[] = "Rake";
+    char s2[5] = "";
+
+    char *destination = copy(s, s + 4, s2);
+
+    assert(strcmp_(s, s2) == 0 && destination == &s2[strlen_(s2)]);
+}
+
+void test_copy_copyPartOfString() {
+    char s[] = "Rake";
+    char s2[5] = "  te";
+
+    char *destination = copy(s, s + 2, s2);
+    char expected[5] = "Rate";
+
+    assert(strcmp_(expected, s2) == 0 && destination == &s2[strlen_(s2) - 2]);
+}
+
+void test_copy() {
+    test_copy_copyWholeString();
+    test_copy_copyPartOfString();
+}
+
+void test_copyIf_isDigit() {
+    char s[] = "Rake890";
+    char s2[4] = "";
+
+    char *destination = copyIf(s, s + 7, s2, isdigit);
+    char expected[4] = "890";
+
+    assert(strcmp_(expected, s2) == 0 && destination == &s2[strlen_(s2)]);
+}
+
+void test_copyIf() {
+    test_copyIf_isDigit();
+}
+
+void test_copyIfReverse_digit() {
+    char s[] = "Rake890";
+    char s2[4] = "";
+
+    char *destination = copyIfReverse(s + 7, s, s2, isdigit);
+    char expected[4] = "098";
+
+    assert(strcmp_(expected, s2) == 0 && destination == &s2[strlen_(s2)]);
+}
+
+void test_copyIfReverse() {
+    test_copyIfReverse_digit();
+}
+
+void stringLibraryTests() {
     test_strlen_();
     test_find();
     test_findNonSpace();
     test_findSpace();
     test_findNonSpaceReverse();
     test_findSpaceReverse();
+    test_strcmp_();
+    test_copy();
+    test_copyIf();
+    test_copyIfReverse();
 }

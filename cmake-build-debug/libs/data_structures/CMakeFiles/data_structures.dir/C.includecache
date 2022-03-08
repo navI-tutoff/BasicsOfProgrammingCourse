@@ -11,6 +11,8 @@ string_.h
 C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.h
 assert.h
 -
+ctype.h
+-
 
 C:/Users/danyt/CLionProjects/myMain/libs/data_structures/string/string_.h
 stdint.h
