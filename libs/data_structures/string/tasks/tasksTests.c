@@ -28,6 +28,22 @@ void test_removeNonLetters() {
     test_removeNonLetters_withSpace();
 }
 
+///                 TASK 2
+
+void test_removeExtraSpaces_thereAreSpaces() {
+    char s[] = "Hello,  World!    Dude.";
+
+    removeExtraSpaces(s);
+    char expected[MAX_SIZE_STRING] = "Hello, World! Dude.";
+
+    assert(strcmp_(s, expected) == 0);
+}
+
+void test_removeExtraSpaces() {
+    test_removeExtraSpaces_thereAreSpaces();
+}
+
 void tasksTests() {
     test_removeNonLetters();
+    test_removeExtraSpaces();
 }

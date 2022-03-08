@@ -13,3 +13,23 @@ void removeNonLetters(char *s) {
     *destination = '\0';
 }
 
+/// TASK 2
+/// сократить количество пробелов между словами данного предложения до одного
+
+void removeExtraSpaces(char *s) {
+    char nonSpaceSymbol = findNonSpace(s);
+    char *nowEl = s;
+    char *nextEl = s + 1;
+    while (*s != '\0') {
+        if (*nowEl == ' ' && *nextEl == ' ') {
+            *nowEl = nonSpaceSymbol;
+            nowEl++;
+            nextEl++;
+            s++;
+        } else {
+            nowEl++;
+            nextEl++;
+            s++;
+        }
+    }
+}
