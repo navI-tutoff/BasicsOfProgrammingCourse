@@ -225,6 +225,30 @@ matrix/matrixTests.c.s:
 	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTests.c.s
 .PHONY : matrix/matrixTests.c.s
 
+ordered_array_set/ordered_array_set.obj: ordered_array_set/ordered_array_set.c.obj
+.PHONY : ordered_array_set/ordered_array_set.obj
+
+# target to build an object file
+ordered_array_set/ordered_array_set.c.obj:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/ordered_array_set/ordered_array_set.c.obj
+.PHONY : ordered_array_set/ordered_array_set.c.obj
+
+ordered_array_set/ordered_array_set.i: ordered_array_set/ordered_array_set.c.i
+.PHONY : ordered_array_set/ordered_array_set.i
+
+# target to preprocess a source file
+ordered_array_set/ordered_array_set.c.i:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/ordered_array_set/ordered_array_set.c.i
+.PHONY : ordered_array_set/ordered_array_set.c.i
+
+ordered_array_set/ordered_array_set.s: ordered_array_set/ordered_array_set.c.s
+.PHONY : ordered_array_set/ordered_array_set.s
+
+# target to generate assembly for a file
+ordered_array_set/ordered_array_set.c.s:
+	cd /d C:\Users\danyt\CLionProjects\myMain\cmake-build-debug && $(MAKE) $(MAKESILENT) -f libs\data_structures\CMakeFiles\data_structures.dir\build.make libs/data_structures/CMakeFiles/data_structures.dir/ordered_array_set/ordered_array_set.c.s
+.PHONY : ordered_array_set/ordered_array_set.c.s
+
 string/stringTests.obj: string/stringTests.c.obj
 .PHONY : string/stringTests.obj
 
@@ -414,6 +438,9 @@ help:
 	@echo ... matrix/matrixTests.obj
 	@echo ... matrix/matrixTests.i
 	@echo ... matrix/matrixTests.s
+	@echo ... ordered_array_set/ordered_array_set.obj
+	@echo ... ordered_array_set/ordered_array_set.i
+	@echo ... ordered_array_set/ordered_array_set.s
 	@echo ... string/stringTests.obj
 	@echo ... string/stringTests.i
 	@echo ... string/stringTests.s

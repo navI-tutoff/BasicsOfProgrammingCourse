@@ -60,16 +60,16 @@ bitset bitset_complement(bitset set) {
 
 void bitset_print(bitset set) {
     printf("{");
-    
+
     bool isEmpty = true;
-    
+
     for (size_t i = 0; i <= set.maxValue; i++) {
         if (bitset_in(set, i)) {
             printf("%d, ", i);
             isEmpty = false;
         }
     }
-    
+
     if (isEmpty) {
         printf("}\n");
     } else {

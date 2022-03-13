@@ -14,6 +14,11 @@ libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixExercises.c.obj
 libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrixTests.c.obj: \
  ../libs/data_structures/matrix/matrix.h \
  ../libs/data_structures/matrix/matrixTests.c
+libs/data_structures/CMakeFiles/data_structures.dir/ordered_array_set/ordered_array_set.c.obj: \
+ ../libs/algorithms/algorithms.h \
+ ../libs/algorithms/array/array.h \
+ ../libs/data_structures/ordered_array_set/ordered_array_set.c \
+ ../libs/data_structures/ordered_array_set/ordered_array_set.h
 libs/data_structures/CMakeFiles/data_structures.dir/string/stringTests.c.obj: \
  ../libs/data_structures/string/stringTests.c \
  ../libs/data_structures/string/string_.h

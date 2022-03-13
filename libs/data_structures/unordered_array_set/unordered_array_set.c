@@ -10,6 +10,11 @@ int compare_ints1(const void *a, const void *b) {
     return 0;
 }
 
+void append_size_t(int *array, size_t *size, const int value) {
+    *size += 1;
+    array[*size - 1] = value;
+}
+
 static void unordered_array_set_shrinkToFit(unordered_array_set *arr) {
     if (arr->size != arr->capacity) {
         arr->data = (int *) realloc(arr->data, arr->size * sizeof(int));
@@ -74,15 +79,10 @@ void unordered_array_set_isAbleAppend(unordered_array_set *set) {
     assert(set->size < set->capacity);
 }
 
-void append(int arr[], size_t *size, const int value) {
-    arr[*size] = value;
-    (*size)++;
-}
-
 // добавляет элемент value в множество set
 void unordered_array_set_insert(unordered_array_set *set, int value) {
     set->data = (int *) realloc(set->data, (set->size + 1) * sizeof(int));
-    append(set->data, &set->size, value);
+    append_size_t(set->data, &set->size, value);
     unordered_array_set_shrinkToFit(set);
 }
 
@@ -105,7 +105,7 @@ unordered_array_set unordered_array_set_union(unordered_array_set set1, unordere
     unordered_array_set unionSet = unordered_array_set_create(set1.size + set2.size);
 
     for (register size_t i = 0; i < set1.size; i++)
-        append(unionSet.data, &unionSet.size, set1.data[i]);
+        append_size_t(unionSet.data, &unionSet.size, set1.data[i]);
 
     for (register size_t i = 0; i < set2.size; i++)
         unordered_array_set_insert(&unionSet, set2.data[i]);
@@ -121,7 +121,7 @@ unordered_array_set unordered_array_set_intersection(unordered_array_set set1, u
 
     for (register size_t i = 0; i < set1.size; i++)
         if (unordered_array_set_in(&set2, set1.data[i]) != set2.size)
-            append(set.data, &set.size, set2.data[i]);
+            append_size_t(set.data, &set.size, set2.data[i]);
 
     unordered_array_set_shrinkToFit(&set);
 

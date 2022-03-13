@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/data_structures.dir/matrix/matrix.c.obj"
   "CMakeFiles/data_structures.dir/matrix/matrixExercises.c.obj"
   "CMakeFiles/data_structures.dir/matrix/matrixTests.c.obj"
+  "CMakeFiles/data_structures.dir/ordered_array_set/ordered_array_set.c.obj"
   "CMakeFiles/data_structures.dir/string/stringTests.c.obj"
   "CMakeFiles/data_structures.dir/string/string_.c.obj"
   "CMakeFiles/data_structures.dir/string/tasks/tasks.c.obj"

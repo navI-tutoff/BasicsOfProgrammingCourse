@@ -5,5 +5,6 @@ libs/algorithms/CMakeFiles/algorithms.dir/algorithms.c.obj: \
  ../libs/algorithms/algorithms.c \
  ../libs/algorithms/algorithms.h
 libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj: \
+ ../libs/algorithms/algorithms.h \
  ../libs/algorithms/array/array.c \
  ../libs/algorithms/array/array.h
