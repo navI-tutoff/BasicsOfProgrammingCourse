@@ -8,29 +8,17 @@
 
 C:/Users/danyt/CLionProjects/myMain/libs/algorithms/algorithms.h
 
-C:/Users/danyt/CLionProjects/myMain/libs/algorithms/array/array.h
+C:/Users/danyt/CLionProjects/myMain/main.c
+stdlib.h
+-
 stdio.h
 -
 stdbool.h
 -
-
-C:/Users/danyt/CLionProjects/myMain/libs/data_structures/ordered_array_set/ordered_array_set.h
-stdint.h
+time.h
 -
-assert.h
--
+libs/algorithms/algorithms.h
+C:/Users/danyt/CLionProjects/myMain/libs/algorithms/algorithms.h
 memory.h
 -
-stdio.h
--
-stdbool.h
--
-../../algorithms/array/array.h
-C:/Users/danyt/CLionProjects/myMain/libs/algorithms/array/array.h
-../../algorithms/algorithms.h
-C:/Users/danyt/CLionProjects/myMain/libs/algorithms/algorithms.h
-
-C:/Users/danyt/CLionProjects/myMain/main.c
-libs/data_structures/ordered_array_set/ordered_array_set.h
-C:/Users/danyt/CLionProjects/myMain/libs/data_structures/ordered_array_set/ordered_array_set.h
 

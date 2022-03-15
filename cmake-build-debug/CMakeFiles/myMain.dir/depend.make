@@ -3,6 +3,4 @@
 
 CMakeFiles/myMain.dir/main.c.obj: \
  ../libs/algorithms/algorithms.h \
- ../libs/algorithms/array/array.h \
- ../libs/data_structures/ordered_array_set/ordered_array_set.h \
  ../main.c
