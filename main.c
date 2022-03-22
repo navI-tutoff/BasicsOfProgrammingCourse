@@ -387,13 +387,13 @@ void timeExperiment() {
     // описание функций сортировки
     SortFunc sorts[] = {
 //            {selectionSort, "selectionSort"}, // 3
-            {insertionSort, "insertionSort"}, // 4
+//            {insertionSort, "insertionSort"}, // 4
 //            {bubbleSort,    "bubbleSort"},    // 2
-            {combSort,      "combSort"},      // 5
-            {countSort,     "countSort"},
-            {mergeSort,     "mergeSort"},
+//            {combSort,      "combSort"},      // 5
+//            {countSort,     "countSort"},
+//            {mergeSort,     "mergeSort"},
             {shellSort,     "shellSort"},     // 6
-            {radixSort,     "radixSort"},     // 7
+//            {radixSort,     "radixSort"},     // 7
     };
     const unsigned FUNCS_N = ARRAY_SIZE (sorts);
     // описание функций генерации
@@ -407,7 +407,7 @@ void timeExperiment() {
     };
     const unsigned CASES_N = ARRAY_SIZE (generatingFuncs);
     // запись статистики в файл
-    for (size_t size = 200000; size <= 300000; size += 10000) {
+    for (size_t size = 210000; size <= 300000; size += 10000) {
         printf(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
         printf("Size : %lld\n", size);
         for (int i = 0; i < FUNCS_N; i++) {
@@ -620,7 +620,7 @@ void
 checkCountComparisonOperations(long long (*sortFunc)(int *, size_t), void (*generateFunc)(int *, size_t), size_t size,
                                char *experimentName) {
     static size_t runCounter = 1;
-    static int innerBuffer[100000];
+    static int innerBuffer[310000];
     generateFunc(innerBuffer, size);
     printf("Run #%zu| ", runCounter++);
     printf("Name: %s\n", experimentName);
@@ -653,9 +653,9 @@ checkCountComparisonOperations(long long (*sortFunc)(int *, size_t), void (*gene
 
 void countComparisonOperationsExperiment() {
     SortFuncComparisonOperations sorts[] = {
-            {getBubbleSortNComp,    "bubbleSort"},
+//            {getBubbleSortNComp,    "bubbleSort"},
             {getInsertionSortNComp, "insertionSort"},
-            {getSelectionSortNComp, "selectionSort"},
+//            {getSelectionSortNComp, "selectionSort"},
             {getCombSortNComp,      "combSort"},
             {getShellSortNComp,     "shellSort"},
             {getRadixSortNComps,    "radixSort"},
@@ -672,7 +672,7 @@ void countComparisonOperationsExperiment() {
     };
     const unsigned CASES_N = ARRAY_SIZE(generatingFuncs);
 
-    for (size_t size = 10000; size <= 100000; size += 10000) {
+    for (size_t size = 210000; size <= 300000; size += 10000) {
         printf("-----------------");
         printf("Size: %zu\n", size);
         for (int i = 0; i < FUNCS_N; ++i) {
