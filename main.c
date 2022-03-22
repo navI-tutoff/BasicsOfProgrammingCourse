@@ -136,7 +136,7 @@ void checkTime(void (*sortFunc )(int *, size_t),
                size_t size, char *experimentName) {
     static size_t runCounter = 1;
 // генерация последовательности
-    static int innerBuffer[100000];
+    static int innerBuffer[300000];
     generateFunc(innerBuffer, size);
     printf("Run #%zu| ", runCounter++);
     printf(" Name : %s\n", experimentName);
@@ -172,7 +172,7 @@ void checkTime(void (*sortFunc )(int *, size_t),
 }
 
 /*
- *
+
  * int d = rand () % a ; // генерация чисел от 0 до a - 1
  * int e = rand () + b ; // генерация чисел от b до RAND_MAX + b
  * int f = rand () % b + a ; // генерация чисел от a до a + b - 1
@@ -386,9 +386,9 @@ void radixSort(int *a, size_t n) {
 void timeExperiment() {
     // описание функций сортировки
     SortFunc sorts[] = {
-            {selectionSort, "selectionSort"}, // 3
+//            {selectionSort, "selectionSort"}, // 3
             {insertionSort, "insertionSort"}, // 4
-            {bubbleSort,    "bubbleSort"},    // 2
+//            {bubbleSort,    "bubbleSort"},    // 2
             {combSort,      "combSort"},      // 5
             {countSort,     "countSort"},
             {mergeSort,     "mergeSort"},
@@ -407,14 +407,14 @@ void timeExperiment() {
     };
     const unsigned CASES_N = ARRAY_SIZE (generatingFuncs);
     // запись статистики в файл
-    for (size_t size = 10000; size <= 100000; size += 10000) {
+    for (size_t size = 200000; size <= 300000; size += 10000) {
         printf(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
-        printf("Size : %d\n", size);
+        printf("Size : %lld\n", size);
         for (int i = 0; i < FUNCS_N; i++) {
             for (int j = 0; j < CASES_N; j++) {
                 // генерация имени файла
                 static char filename[128];
-                sprintf(filename, "%s_%s_time ",
+                sprintf(filename, "%s_%s_time",
                         sorts[i].name, generatingFuncs[j].name);
                 checkTime(sorts[i].sort,
                           generatingFuncs[j].generate,
@@ -687,7 +687,7 @@ void countComparisonOperationsExperiment() {
 }
 
 int main() {
-//    timeExperiment();
-    countComparisonOperationsExperiment();
+    timeExperiment();
+//    countComparisonOperationsExperiment();
     return 0;
 }
